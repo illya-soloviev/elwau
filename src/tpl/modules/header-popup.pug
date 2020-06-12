@@ -1,0 +1,36 @@
+.header-popup(style="margin-top: -70px", id="headerPopup")
+    .container
+        .header-popup__inner
+            .header-popup__contacts
+                .header-popup__contact-item
+                    a.header-popup-contact-link(href="tel:+84952342233").
+                        +8 (495) 234-22-33
+                .header-popup__contact-item
+                    a.header-popup-contact-link(href="tel:+84952322235").
+                        +8 (495) 232-22-35
+
+            .header-popup__mobile-block
+                button.nav-toggle.jsNavToggle.jsPopup(type="button")
+                    span.nav-toggle__item.nav-toggle__item--popup Навигация
+
+                a.catalog-link.jsCatalogLink.jsPopup(href="/catalog.html")
+                    include ../../assets/img/svg-sprites/catalog.svg
+                    | Каталог
+            
+            .header-popup__search
+                form.search(action="/", method="get")
+                    input.search__input(type="text", placeholder="поиск по каталогу")
+                    button.search__btn(type="submit")
+                        include ../../assets/img/svg-sprites/search.svg
+
+            .header-popup__links
+                .header-popup-item
+                    a.header-popup__link(href="#")
+                        include ../../assets/img/svg-sprites/cart.svg
+                        span.header-popup__number 0
+                .header-popup-item
+                    a.header-popup__link.header-popup__link--lock(href="#", data-modal="#reg")
+                        include ../../assets/img/svg-sprites/lock.svg
+                        span.header-popup__text Вход на сайт
+                
+        

@@ -1,0 +1,191 @@
+.modal#e-mail
+    .modal__dialog(style="transform: scale(0)")
+        button.modal__close(data-close)
+            include ../../assets/img/svg-sprites/close.svg
+        h1.modal__title Напишите нам
+        form.form(action="/" method="post")
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    label.form__label(for="city") Город
+                    .form__select           
+                        select#city(name="city")
+                            option(value="Москва") Москва
+                            option(value="Санкт-Петербург") Санкт-Петербург
+                            option(value="Екатеринбург") Екатеринбург
+                            option(value="Ростов-на-Дону") Ростов-на-Дону
+                            option(value="Тула") Тула
+                            option(value="Краснодар") Краснодар
+                            option(value="Волгоград") Волгоград
+                            option(value="Воронеж") Воронеж
+                            option(value="Оренбург") Оренбург
+                            option(value="Самара") Самара
+                            option(value="Тюмень") Тюмень
+                            option(value="Белгород") Белгород
+                            option(value="Казань") Казань
+                            option(value="Липецк") Липецк
+                            option(value="Сургут") Сургут
+                            option(value="Сочи") Сочи
+                            option(value="Нижний Новгород") Нижний Новгород
+                            option(value="Новороссийск") Новороссийск
+                            option(value="Симферополь") Симферополь
+                            option(value="Ярославль") Ярославль
+            .form__group
+                .form__item
+                    label.form__label.form__label--obligatory(for="name1") Имя
+                    input.form__input#name1(type="text" name="name")
+                .form__item
+                    label.form__label(for="theme") Тема сообщения
+                    .form__select           
+                        select#theme(name="theme")
+                            option(value="Замечания по работе сайта") Замечания по работе сайта
+                            option(value="Замечания и пожелания") Замечания и пожелания
+                            option(value="Ассортимент магазина") Ассортимент магазина
+                            option(value="Покупка и доставка") Покупка и доставка
+                            option(value="Комментраий к обращению") Комментраий к обращению
+                            option(value="Фотографии к обращению") Фотографии к обращению
+                            option(value="Статус заказа") Статус заказа
+                            option(value="Elwau бонус") Elwau бонус
+                            option(value="Документы для юр.лиц") Документы для юр.лиц
+            .form__group
+                .form__item
+                    label.form__label(for="number") Номер заказа
+                    input.form__input#number(type="number" name="number")
+                .form__item
+                    label.form__label.form__label--obligatory(for="phone1") Телефон
+                    input.form__input#phone1(type="tel" name="phone" placeholder="Ваш номер телефона")
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    label.form__label.form__label--obligatory(for="email2") Введите E-mail
+                    input.form__input#email2(type="email" name="email")
+            .form__group.form__group--one-item
+                .form__item.form__item--full.form__item--flex-column
+                    span.form__connect-way Предпочтительный способ связи:
+                    .form__radio
+                        input.form__input-hide#email-way(type="radio" name="connect-way")
+                        label.form__radio-label(for="email-way1") E-mail
+                        input.form__input-hide#phone-way(type="radio" name="connect-way")
+                        label.form__radio-label(for="phone-way") Телефон
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    label.form__label(for="comment") Комментарий
+                    textarea.form__comment#comment(name="comment")
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    label.form__file
+                        span.form__file-inner
+                            include ../../assets/img/svg-sprites/file.svg
+                            span.form__file-text Кликните для загрузки файлов
+                            input.form__input-hide(type="file")
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    input.form__input-hide#rules(type="checkbox" name="rules")
+                    label.form__checkbox-label(for="rules").
+                        Согласен(-на) <a href="#" target="_blank">на обработку персональных данных</a>
+            .form__group.form__group--one-item
+                .form__item.form__item--full
+                    .form__text
+                        p. 
+                            Мы рады вашим отзывам и предложениям, они помогают нам стать лучше! 
+                            Чтобы отправить сообщение, заполните, пожалуйста, все поля формы. 
+                            Мы обязательно ответим в течение 24 часов.
+            .form__group.form__group--one-item.form__group--no-indent
+                .form__item.form__item--full.form__item--center
+                    button.btn.btn--no-icon(type="submit") Отправить сообщение
+.modal#reg
+    .modal__dialog(style="transform: scale(0)")
+        button.modal__close(data-close)
+            include ../../assets/img/svg-sprites/close.svg
+        .tabs-reg
+            .tabs-reg__nav
+                .tabs-reg__nav-item.active(data-reg-tab="#reg-tab-1")
+                    button.btn.btn--full(type="button")
+                        include ../../assets/img/svg-sprites/key.svg
+                        span.btn__desktop-text Вход для покупателей
+                        span.btn__mobile-text Вход
+                .tabs-reg__nav-item(data-reg-tab="#reg-tab-2")
+                    button.btn.btn--full(type="button")
+                        include ../../assets/img/svg-sprites/user.svg
+                        span.btn__desktop-text Регистрация пользователя
+                        span.btn__mobile-text Регистрация
+            .tabs-reg__body
+                .tabs-reg__item.jsRegTab.active#reg-tab-1
+                    .tabs-reg__group
+                        .tabs-reg__content
+                            h3.tabs-reg__title Войти, используя эл.почту и пароль
+                        form.form(action="/" method="post")
+                            .form__group
+                                .form__item.form__item--small
+                                    label.form__label.form__label--obligatory(for="email1") Введите E-mail
+                                    input.form__input#email1(type="email" name="email")
+                                .form__item.form__item--small
+                                    label.form__label.form__label--obligatory(for="password1") Пароль
+                                    input.form__input.form__input--has-icon.jsPasswordInput#password1(type="password" name="password")
+                                    a.form__icon-password.jsPasswordControl(href="#")
+                                .form__item.form__item--btn
+                                    button.btn.btn--full.btn--center.btn--reg-btn(type="submit") Войти
+                                    a.form__link(href="#") Восстановить пароль
+                    .tabs-reg__group
+                        .tabs-reg__content
+                            h3.tabs-reg__title Войти, используя номер бонусной карты
+                            p.tabs-reg__text.
+                                Номер карты указан на лицевой стороне.
+                        form.form(action="/" method="post")
+                            .form__group
+                                .form__item.form__item--big
+                                    label.form__label(for="card-number") Номер карты
+                                    input.form__input#card-number(type="number" name="card-number")
+                                .form__item.form__item--btn
+                                    button.btn.btn--full.btn--center.btn--reg-btn(type="submit") Войти
+                    .tabs-reg__group
+                        .tabs-reg__content
+                            h3.tabs-reg__title Войти, используя аккаунт соцсети
+                            p.tabs-reg__text.
+                                Откроется окно подтверждения авторизации, после этого
+                                Вы автоматически вернетесь на сайт.
+                        .tabs-reg__social
+                            a.tabs-reg__social-link.facebook(href="#")
+                                include ../../assets/img/svg-sprites/facebook.svg
+                            a.tabs-reg__social-link.vk(href="#")
+                                include ../../assets/img/svg-sprites/vk.svg
+                            a.tabs-reg__social-link.odnoklassniki(href="#")
+                                include ../../assets/img/svg-sprites/odnoklassniki.svg
+                            a.tabs-reg__social-link.google(href="#")
+                                include ../../assets/img/svg-sprites/google-plus.svg
+                .tabs-reg__item.jsRegTab#reg-tab-2
+                    .tabs-reg__group
+                        form.form(action="/" method="post")
+                            .form__group
+                                .form__item
+                                    label.form__label.form__label--obligatory(for="name2") Имя
+                                    input.form__input#name2(type="text" name="name")
+                                .form__item
+                                    label.form__label.form__label--obligatory(for="surname") Фамилия
+                                    input.form__input#surname(type="text" name="surname")
+                            .form__group
+                                .form__item
+                                    label.form__label(for="phone2") Телефон
+                                    input.form__input#phone2(type="tel" name="phone")
+                                .form__item
+                                    label.form__label.form__label--obligatory(for="e-mail") Введите E-mail
+                                    input.form__input#e-mail(type="email" name="e-mail")
+                            .form__group
+                                .form__item
+                                    label.form__label.form__label--obligatory(for="password2") Пароль
+                                    input.form__input.form__input--has-icon.jsPasswordInput#password2(type="password" name="password")
+                                    a.form__icon-password.jsPasswordControl(href="#")
+                                    .form__subinput-text
+                                        | Пароль должен содержать минимум 6 символов
+                                .form__item
+                                    label.form__label.form__label--obligatory(for="repeat-password") Повторите пароль
+                                    input.form__input.form__input--has-icon.jsPasswordInput#repeat-password(type="password" name="repeat-password")
+                                    a.form__icon-password.jsPasswordControl(href="#")
+                            .form__group.form__group--one-item.form__group--small-indent
+                                .form__item.form__item--full
+                                    input.form__input-hide#agreement(type="checkbox" name="agreement")
+                                    label.form__checkbox-label(for="agreement").
+                                        Настоящим подтверждаю, что я ознакомлен и согласен с условиями <a href="#" target="_blank">
+                                        политики конфиденциальности</a> и даю <a href="#" target="_blank">согласие на обработку персональных
+                                        данных</a>
+                            .form__group.form__group--one-item.form__group--no-indent
+                                .form__item.form__item--full.form__item--center
+                                    button.btn.btn--no-icon(type="submit") Зарегистрироваться

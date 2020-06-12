@@ -1,0 +1,140 @@
+extends tpl/layouts/default
+
+include tpl/mixins/product
+
+block variables
+    - var pageTitle = 'Главная страница'        
+
+block content
+    section.section.section--carousel
+        .carousel
+            button.carousel__arrow.carousel__arrow--prev#carousel-arrow-prev(type="button")
+            button.carousel__arrow.carousel__arrow--next#carousel-arrow-next(type="button")
+            .carousel__items#carousel
+                div
+                    .carousel__item
+                        .carousel__col
+                            .carousel__content
+                                h2.carousel__title Электрический мини-вертолет Beacon
+                                .carousel__desc
+                                    .carousel__desc-item.carousel__desc-item--darken
+                                        .carousel__desc-col Тип: 
+                                        .carousel__desc-col мини вертолет
+                                    .carousel__desc-item
+                                        .carousel__desc-col Шасси: 
+                                        .carousel__desc-col пластик
+                                    .carousel__desc-item.carousel__desc-item--darken
+                                        .carousel__desc-col Электродвигатели: 
+                                        .carousel__desc-col 180 размера (2 шт.)
+                                    .carousel__desc-item
+                                        .carousel__desc-col Время полета: 
+                                        .carousel__desc-col 10 - 12 минут
+                                .carousel__footer
+                                    .carousel__price. 
+                                        <span>Цена: </span>  <b class="carousel__number">6 960</b>   рублей
+                                    a.carousel__link(href="#") В корзину
+                        .carousel__col
+                            img.img(src="assets/img/slide.png", alt="Игрушка")
+                div
+                    .carousel__item
+                        .carousel__col
+                            .carousel__content
+                                h2.carousel__title Электрический мини-вертолет Beacon
+                                .carousel__desc
+                                    .carousel__desc-item.carousel__desc-item--darken
+                                        .carousel__desc-col Тип: 
+                                        .carousel__desc-col мини вертолет
+                                    .carousel__desc-item
+                                        .carousel__desc-col Шасси: 
+                                        .carousel__desc-col пластик
+                                    .carousel__desc-item.carousel__desc-item--darken
+                                        .carousel__desc-col Электродвигатели: 
+                                        .carousel__desc-col 180 размера (2 шт.)
+                                    .carousel__desc-item
+                                        .carousel__desc-col Время полета: 
+                                        .carousel__desc-col 10 - 12 минут
+                                .carousel__footer
+                                    .carousel__price. 
+                                        <span>Цена: </span>  <b class="carousel__number">6 960</b>   рублей
+                                    a.carousel__link(href="#") В корзину
+                        .carousel__col
+                            img.img(src="assets/img/slide.png", alt="Игрушка")
+    section.section.section--products
+        .products
+            h5.products__title 
+                span Распродажа
+            .products__inner
+                - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                +product('product-page.html',1,'18 480',18480,productName,1)
+
+                - var productName = 'Электрический мини-вертолет HM 60#B'
+                +product('product-page.html',2,'5 712',5712,productName,1)
+
+                - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARF'
+                +product('product-page.html',3,'19 480',19480,productName,1)
+    section.section.section--products
+        .products
+            h5.products__title 
+                span Хиты продаж
+            .products__inner
+                - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                +product('product-page.html',1,'18 480',18480,productName,2)
+
+                - var productName = 'Электрический мини-вертолет HM 60#B'
+                +product('product-page.html',2,'5 712',5712,productName,2)
+
+                - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARF'
+                +product('product-page.html',3,'19 480',19480,productName,2)
+
+                - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                +product('product-page.html',1,'18 480',18480,productName,2)
+
+                - var productName = 'Электрический мини-вертолет HM 60#B'
+                +product('product-page.html',2,'5 712',5712,productName,2)
+
+                - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARF'
+                +product('product-page.html',3,'19 480',19480,productName,2)
+    section.section
+        .reviews
+            h3.reviews__title Последние обзоры
+            .reviews__item
+                a.reviews__link(href="#")
+                    img.img(src="assets/img/review.jpg", alt="Обзор игрушки")
+                .reviews__content
+                    h4.reviews__item-title
+                        a(href="#").
+                            Наша компания организовала тест на прочность 
+                            и выносливость эктрическому мини-вертолету HM60#B
+                    .reviews__text
+                        p.
+                            Было приглашено около 30 человек, но зрителей собралось в разы больше. 
+                            Место проведения теста - площадь.
+                            Зрители смотрели как на шоу, маневры и падения вертолета сопровождались возгласами, 
+                            вот вот и ходила бы волна по зрителям.
+            .reviews__item
+                a.reviews__link(href="#")
+                    img.img(src="assets/img/review.jpg", alt="Обзор игрушки")
+                .reviews__content
+                    h4.reviews__item-title
+                        a(href="#").
+                            Наша компания организовала тест на прочность 
+                            и выносливость эктрическому мини-вертолету HM60#B
+                    .reviews__text
+                        p.
+                            Было приглашено около 30 человек, но зрителей собралось в разы больше. 
+                            Место проведения теста - площадь.
+                            Зрители смотрели как на шоу, маневры и падения вертолета сопровождались возгласами, 
+                            вот вот и ходила бы волна по зрителям.
+    section.section
+        .about
+            h3.about__title О компании
+            .about__text
+                p.
+                    История компании elwau.ru – один из примеров сочетания 
+                    творческого подхода с чрезвычайной практичностью. Знаменитая идея братьев Венинг 
+                    – оснастить различные виды транспорта мобильными холодильниками – в 70-х годах прошлого века 
+                    перешагнула стандарты инженерного мышления.
+                    Что же до применения этой и множества других разработок – 
+                    автохолодильники автокондиционеры, автопылесосы, автокофеварки elwau.ru 
+                    – то здесь братья-изобретатели блестяще продемонстрировали свои организаторские таланты.  
+                    <a class="about__link" href="#">читать дальше</a> 

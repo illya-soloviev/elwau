@@ -1,0 +1,196 @@
+extends tpl/layouts/default
+include tpl/mixins/product
+
+block variables
+    - var pageTitle = 'Каталог'
+
+block content
+    .breadcrumb
+        a.breadcrumb__link.breadcrumb__link--main(href="index.html") Главная
+        ul.breadcrumb__list
+            li.breadcrumb__item.active Каталог
+        span.breadcrumb__last-breadcrumb Каталог
+    .section
+        .filters
+            .filters__top
+                .filters__col.filters__col--small
+                   | показать:
+                .filters__col
+                    .filters__categories
+                        button.filters__btn-category.show(type="button", data-filter="автомодели")
+                            | автомодели
+                        button.filters__btn-category.show(type="button", data-filter="самолеты")
+                            | самолеты
+                        button.filters__btn-category.show(type="button", data-filter="вертолеты")
+                            | вертолеты
+                        button.filters__btn-category.show(type="button", data-filter="aккумуляторы и кабели")
+                            | аккумуляторы кабели
+                        button.filters__btn-category.show(type="button", data-filter="аппаратура")
+                            | аппаратура
+                        button.filters__btn-category.show(type="button", data-filter="инструмент, материалы")
+                            | инструмент, материалы
+                        button.filters__btn-category.show(type="button", data-filter="винты, крепеж, клей")
+                            | винты,кререж,клей
+                        button.filters__btn-category(type="button", data-filter="двигатели ДВС")
+                            | двигатели ДВС
+                        button.filters__btn-category(type="button", data-filter="электродвигатели")
+                            | электродвигатели
+                        button.filters__btn-category(type="button", data-filter="катера, яхты")
+                            | катера, яхты
+                        button.filters__btn-add#listOpen
+                            include assets/img/svg-sprites/plus.svg
+                    .filters__popup#filtersList
+                        span.filters__popup-title добавить группу:
+                        ul.filters__popup-list
+                            li.filters__popup-item.selected(data-select="автомодели")
+                                a.filters__popup-btn(href="#") Автомодели
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="самолеты")
+                                a.filters__popup-btn(href="#") Самолеты
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="вертолеты")
+                                a.filters__popup-btn(href="#") Вертолеты
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="aккумуляторы и кабели")
+                                a.filters__popup-btn(href="#") Аккумуляторы, кабели
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="аппаратура")
+                                a.filters__popup-btn(href="#") Аппаратура
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="инструмент, материалы")
+                                a.filters__popup-btn(href="#") Инструмент, материалы
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item.selected(data-select="винты, крепеж, клей")
+                                a.filters__popup-btn(href="#") Винты, крепеж, клей
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item(data-select="двигатели ДВС")
+                                a.filters__popup-btn(href="#") Двигатели ДВС
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item(data-select="электродвигатели")
+                                a.filters__popup-btn(href="#") Электродвигатели
+                                    include assets/img/svg-sprites/plus.svg
+                            li.filters__popup-item(data-select="катера, яхты")
+                                a.filters__popup-btn(href="#") Катера, яхты
+                                    include assets/img/svg-sprites/plus.svg
+            .filters__bottom
+                span.filters__sort сортировать по:
+                button.filters__btn.jsFilterBtnDesktop.jsFilterDate.sorted.applied(type="button", data-date-btn="desc")
+                    span дате добавления
+                    include assets/img/svg-sprites/arrow-right.svg
+                button.filters__btn.jsFilterBtnDesktop.jsFilterPrice.sorted(type="button", data-price-btn="asc")
+                    span стоимости
+                    include assets/img/svg-sprites/arrow-right.svg
+            .filters__block-mobile
+                button.filters__btn-mobile(type="button", data-filter-modal="#filter-categories")
+                    include assets/img/svg-sprites/filter.svg
+                    | Категории
+                button.filters__btn-mobile(type="button", data-filter-modal="#filter-price")
+                    include assets/img/svg-sprites/sorting.svg
+                    | Сортировка
+                .filters__modal#filter-price
+                    .filters__modal-dialog(style="transform: scale(0)")
+                        .filters__modal-header
+                            h4.filters__modal-title Сортировка
+                            button.filters__modal-btn(type="button", data-filter-close)
+                                    include assets/img/svg-sprites/close.svg
+                        ul.filters__modal-list
+                            li.filters__list-item.jsFilterBtnMobile.jsMbDateFilters.jsMbDateDesc.sorted.applied последней дате добавления
+                            li.filters__list-item.jsFilterBtnMobile.jsMbDateFilters.jsMbDateAsc ранней дате добавления
+                            li.filters__list-item.jsFilterBtnMobile.jsMbPriceFilters.jsMbPriceAsc возрастанию цены
+                            li.filters__list-item.jsFilterBtnMobile.jsMbPriceFilters.jsMbPriceDesc.sorted убыванию цены
+                .filters__modal#filter-categories
+                    .filters__modal-dialog(style="transform: scale(0)")
+                        .filters__modal-header
+                            h4.filters__modal-title Категории
+                            button.filters__modal-btn(type="button", data-filter-close)
+                                    include assets/img/svg-sprites/close.svg
+                        ul.filters__mobile-category-list
+                            li.filters__mobile-category-item.selected(data-filter-mobile="автомодели") Автомодели
+                            li.filters__mobile-category-item.selected(data-filter-mobile="самолеты") Самолеты
+                            li.filters__mobile-category-item.selected(data-filter-mobile="вертолеты") Вертолеты
+                            li.filters__mobile-category-item.selected(data-filter-mobile="aккумуляторы и кабели") Аккумуляторы, кабели
+                            li.filters__mobile-category-item.selected(data-filter-mobile="аппаратура") Аппаратура
+                            li.filters__mobile-category-item.selected(data-filter-mobile="инструмент, материалы") Инструмент, материалы
+                            li.filters__mobile-category-item.selected(data-filter-mobile="винты, крепеж, клей") Винты, крепеж, клей
+                            li.filters__mobile-category-item(data-filter-mobile="двигатели ДВС") Двигатели ДВС
+                            li.filters__mobile-category-item(data-filter-mobile="электродвигатели") Электродвигатели
+                            li.filters__mobile-category-item(data-filter-mobile="катера, яхты") Катера, яхты
+                        button.btn.btn--small.btn--full.btn--center#categoryFilterBtn(type="button") Применить
+        section.section.section--products
+            .products
+                .products__inner#productsContainer
+                    - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                    +product('product-page.html',1,'18 480',18480,productName,3,'2011-05-17','автомодели')
+
+                    - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARFblabla'
+                    +product('product-page.html',2,'5 712',5712,productName,3,'2011-03-12','самолеты')
+
+                    - var productName = 'Электрический мини-вертолет HM 60#B'
+                    +product('product-page.html',3,'19 480',19480,productName,3,'2011-03-03','вертолеты')
+
+                    - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                    +product('product-page.html',1,'20 530',20530,productName,3,'2011-02-21','aккумуляторы и кабели')
+
+                    - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARFblabla'
+                    +product('product-page.html',2,'12 499',12499,productName,3,'2011-02-15','аппаратура')
+
+                    - var productName = 'Электрический мини-вертолет HM 60#B'
+                    +product('product-page.html',3,'9 999',9999,productName,3,'2011-02-07','инструмент, материалы')
+
+                    - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                    +product('product-page.html',1,'7 650',7650,productName,3,'2011-01-30','винты, крепеж, клей')
+
+                    - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARFblabla'
+                    +product('product-page.html',2,'4 500',4500,productName,3,'2011-01-24','двигатели ДВС')
+
+                    - var productName = 'Электрический мини-вертолет HM 60#B'
+                    +product('product-page.html',3,'7 650',7650,productName,3,'2011-01-11','электродвигатели')
+
+                    - var productName = 'CYCLONE D4 WORLD CHAMPIONSHIP EDITION KIT'
+                    +product('product-page.html',1,'20 530',20530,productName,3,'2010-12-28','катера, яхты')
+
+                    - var productName = 'Кордовая модель-копия PT-19 Profile Control Line 36 ARFblabla'
+                    +product('product-page.html',2,'5 712',5712,productName,3,'2010-12-12','самолеты')
+
+                    - var productName = 'Электрический мини-вертолет HM 60#B'
+                    +product('product-page.html',3,'10 999',10999,productName,3,'2010-11-29','вертолеты')
+        .pagination
+            .pagination__pages
+                span.pagination__text Страницы:
+                ul.pagination__list
+                    li.pagination__item
+                        a.pagination__link(href="#") 1
+                    li.pagination__item
+                        a.pagination__link.active(href="#") 2
+                    li.pagination__item
+                        a.pagination__link(href="#") 3
+                    li.pagination__item
+                        a.pagination__link(href="#") 4
+                    li.pagination__item
+                        a.pagination__link(href="#") 10
+                    li.pagination__item
+                        span.pagination__item-dots ..
+                    li.pagination__item
+                        a.pagination__link(href="#") 45
+            ul.pagination__steps
+                li.pagination__step
+                    a.pagination__step-link.pagination__step-link--prev(href="#")
+                        include assets/img/svg-sprites/arrow-right.svg
+                        | Предыдущая страница
+                li.pagination__step
+                    a.pagination__step-link.pagination__step-link--next(href="#") 
+                        | Следующая страница
+                        include assets/img/svg-sprites/arrow-right.svg
+    section.section
+        .about
+            h3.about__title О компании
+            .about__text
+                p.
+                    История компании elwau.ru – один из примеров сочетания 
+                    творческого подхода с чрезвычайной практичностью. Знаменитая идея братьев Венинг 
+                    – оснастить различные виды транспорта мобильными холодильниками – в 70-х годах прошлого века 
+                    перешагнула стандарты инженерного мышления.
+                    Что же до применения этой и множества других разработок – 
+                    автохолодильники автокондиционеры, автопылесосы, автокофеварки elwau.ru 
+                    – то здесь братья-изобретатели блестяще продемонстрировали свои организаторские таланты.  
+                    <a class="about__link" href="#">читать дальше</a> 

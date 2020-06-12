@@ -1,0 +1,41 @@
+mixin product(productLink,filePath,priceText,priceNumeric,productName,altValue,dataTime,dataCat)
+    if(dataTime == null)
+        .products__item
+            .products__header
+                a(href=productLink)
+                    if(altValue == '1')
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Товар на распродажу")
+                    else if(altValue == '2')
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Хит продаж")
+                    else
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Игрушка")
+                .products__price
+                    span(data-price=priceNumeric)=priceText
+                    |  р.
+            .products__footer
+                a.products__link(href=productLink)=productName
+    else 
+        .products__item.jsFilterItem(data-time=dataTime,data-cat=dataCat)
+            .products__header
+                a(href=productLink)
+                    if(altValue == '1')
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Товар на распродажу")
+                    else if(altValue == '2')
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Хит продаж")
+                    else
+                        img.img(src="assets/img/products/product"+ filePath +".png", alt="Игрушка")
+                .products__price
+                    span.jsPrice(data-price=priceNumeric)=priceText
+                    |  р.
+            .products__footer
+                a.products__link(href=productLink)=productName
+mixin productMin(productLink,filePath,price,productName)
+    .products__item.products__item--min
+        .products__header
+            a(href=productLink)
+                img.img(src="assets/img/products-similar/product-similar"+ filePath +".png", alt="Похожий товар")
+        .products__price.products__price--min
+            span=price
+            |  р.
+        .products__footer.products__footer--min
+            a.products__link.products__link--min(href=productLink)=productName

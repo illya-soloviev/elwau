@@ -1,0 +1,92 @@
+header.header#header
+    .header__top
+        button.nav-toggle.jsNavToggle(type="button")
+            span.nav-toggle__item Навигация
+        .header-top#nav
+            .header-top__col
+                a.header-top__link(href="#") О компании 
+                nav.nav
+                    a.nav__link(href="#") О компании
+                    a.nav__link(href="catalog.html") Каталог
+                    a.nav__link(href="#") Доставка
+                    a.nav__link(href="#") Наши магазины
+                    a.nav__link(href="#") Оптовикам
+                    a.nav__link(href="#") Контакты
+            .header-top__col.header-top__col--2
+                a.header-top__link.header-top__link--big-indent(href="#") Контакты
+                .header-top__item
+                    h4.header-top__title Адрес:
+                    p.header-top__text.
+                        105118, г.Москва, ул. Кирпичная, д. 22
+                .header-top__item.header-top__item--flex
+                    .header-top__schedule
+                        h4.header-top__title График работы:
+                        p.header-top__text.
+                            Пн-Пт: с 9:00 до 18:00 
+                            <br>
+                            Сб-Вс: Выходной
+                    .header-top__contacts
+                        a.header-top__contact-phone(href="tel:+84952342233")
+                            span 8 495
+                            |  234-22-33
+                        a.header-top__contact-phone(href="tel:+84952322235")
+                            span 8 495
+                            |  232-22-35
+                        a.header-top__contact-mail(href="mailto:info@elwau.ru")
+                            | info@elwau.ru
+                        a.header-top__contact-icq(href="#")
+                            include ../../assets/img/svg-sprites/chat.svg
+                            | 288-22-08
+        .header__search
+            form.search(action="/", method="get")
+                input.search__input(type="text", placeholder="поиск по каталогу")
+                button.search__btn(type="submit")
+                    include ../../assets/img/svg-sprites/search.svg
+    .header__bottom
+        .header__inner
+            .header__col.header__col--flex
+                a.catalog-link.catalog-link--black.jsCatalogLink(href="catalog.html")
+                    include ../../assets/img/svg-sprites/catalog.svg
+                    | Каталог
+                a.header__logo(href="index.html")
+
+            .header__col.header__col--big 
+                .header__contacts
+                    .header__contacts-phones
+                        include ../../assets/img/svg-sprites/phone.svg
+                        a.header__contacts-link(href="tel:+84952342233").
+                            <span>(495)</span> 234-22-33,
+                        a.header__contacts-link(href="tel:+84952322235").
+                            <span>(495)</span> 232-22-35
+                    ul.header__links.header__links--hide-mobile
+                        li.header__item
+                            include ../../assets/img/svg-sprites/email.svg
+                            a.header__link(href="#", data-modal="#e-mail") Написать сообщение
+                        li.header__item
+                            include ../../assets/img/svg-sprites/chat.svg
+                            a.header__link(href="#") 288-22-08
+            
+            .header__col.header__col--small
+                ul.header__links.header__links--list.header__links--hide-mobile
+                    li.header__item.header__item--has-popup
+                        include ../../assets/img/svg-sprites/cart.svg
+                        a.header__link(href="#") В вашей корзине пусто
+                        .cart-popup
+                            .cart-popup__header
+                                .cart-popup__text Ваша корзина пуста
+                            .cart-popup__footer
+                                a.btn.btn--center.btn--small(href="catalog.html") Перейти к покупкам
+                    li.header__item
+                        include ../../assets/img/svg-sprites/lock.svg
+                        a.header__link(href="#", data-modal="#reg") Войти в личный кабинет
+                .header__mobile-block
+                    .header__icon-item
+                        a.header__icon-link(href="#", data-modal="#e-mail")
+                            include ../../assets/img/svg-sprites/email.svg
+                    .header__icon-item
+                        a.header__icon-link(href="#")
+                            include ../../assets/img/svg-sprites/cart.svg
+                            span.header__number 0
+                    .header__icon-item
+                        a.header__icon-link(href="#", data-modal="#reg")
+                            include ../../assets/img/svg-sprites/lock.svg

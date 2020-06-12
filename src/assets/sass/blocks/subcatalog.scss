@@ -1,0 +1,49 @@
+.subcatalog {
+    display: none;
+    background-color: $white-darken;
+
+    .catalog__item:hover & {
+       display: block;
+    }
+}
+
+.subcatalog__item {
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        width: 13px;
+        height: 1px;
+
+        background-color: $gray;
+
+        position: absolute;
+        top: 50%;
+        left: 12px;
+        z-index: 1;
+
+        transition: background-color .1s linear;
+    }
+
+    &:hover:before {
+        background-color: $white;
+    }
+}
+
+.subcatalog__link {
+    display: block;
+    padding: 10px 5px 10px 30px;
+
+    color: $gray;
+    text-decoration: underline;
+
+    transition: background-color .1s linear,
+    color .1s linear;
+
+    &:hover {
+        color: $white;
+        text-decoration: none;
+        background-color: $orange;
+    }
+}

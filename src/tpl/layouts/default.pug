@@ -1,0 +1,31 @@
+block variables
+
+<!DOCTYPE html>
+html(lang="ru")
+    head
+        include ../modules/head
+    body
+        .page
+            .container
+                include ../modules/header
+
+                include ../modules/header-popup
+
+                .main-wrapper
+                    .main-wrapper__col-left
+                        aside
+                            include ../modules/catalog
+                            include ../modules/news
+                            include ../modules/e-mail
+                            include ../modules/banners
+                    .main-wrapper__col-right
+                        main
+                            block content
+                include ../modules/footer
+            
+            include ../modules/modal
+            
+            a.back-top#backTop(href="#")
+            
+        script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+        script(src="assets/js/app.min.js")

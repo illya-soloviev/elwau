@@ -1,0 +1,196 @@
+extends tpl/layouts/default
+
+include tpl/mixins/product
+
+block variables
+    - var pageTitle = 'Kyosho Lazer ZX-5 (синий)'
+
+block content
+    .breadcrumb
+        a.breadcrumb__link.breadcrumb__link--main(href="index.html") Главная
+        ul.breadcrumb__list
+            li.breadcrumb__item
+                a.breadcrumb__link(href="catalog.html") Каталог
+            li.breadcrumb__item
+                a.breadcrumb__link(href="#") Автомодели
+            li.breadcrumb__item
+                a.breadcrumb__link(href="#") Быстрые
+            li.breadcrumb__item.active Cyclone D4
+        span.breadcrumb__last-breadcrumb Cyclone D4
+    section.section
+        .product
+            .product__left-col
+                .product__img-main
+                    img.xzoom(src="assets/img/toy/preview/toy1.jpg", alt="Cyclone D4", xoriginal="assets/img/toy/original/toy1.jpg")
+                .product__img-nav.xzoom-thumbs
+                    a.product__img-wrap(href="assets/img/toy/original/toy1.jpg")
+                        img.xzoom-gallery(src="assets/img/toy/thumbs/toy1.jpg", alt="Cyclone D4", width="90", xpreview="assets/img/toy/preview/toy1.jpg")
+                    a.product__img-wrap(href="assets/img/toy/original/toy2.jpg")
+                        img.xzoom-gallery(src="assets/img/toy/thumbs/toy2.jpg", alt="Cyclone D4", width="90", xpreview="assets/img/toy/preview/toy2.jpg")
+                    a.product__img-wrap(href="assets/img/toy/original/toy3.jpg")
+                        img.xzoom-gallery(src="assets/img/toy/thumbs/toy3.jpg", alt="Cyclone D4", width="90", xpreview="assets/img/toy/preview/toy3.jpg")
+            .product__right-col
+                .product__content-wrap.product__content-wrap--mobile-center
+                    h3.product__title Kyosho Lazer ZX-5 (синий)
+                .product__content-wrap.product__content-wrap--mobile-center
+                    .product__desc
+                        .product__desc-item Производитель: Kyosho
+                        .product__desc-item Модель: 30861T4B
+                        .product__desc-item Наличие: В наличии
+                .product__content-wrap
+                    .product__price-wrap
+                        span.product__price 8,490 р.
+                        a.product__btn-price(href="#") купить
+                .product__social
+                    span.product__social-text Поделиться с друзьями
+                    .product__social-links
+                        a.product__social-link.vk(href="#")
+                            include assets/img/svg-sprites/vk.svg
+                        a.product__social-link(href="#")
+                            include assets/img/svg-sprites/twitter.svg
+                        a.product__social-link.facebook(href="#")
+                            include assets/img/svg-sprites/facebook.svg
+                ul.product__list
+                    li.product__list-item
+                        a.product__list-link(href="#") Задать вопрос по товару
+                    li.product__list-item
+                        a.product__list-link(href="#") Доставка и гарантия
+    .section.section--product-desc
+        .product-tabs
+            .product-tabs__nav
+                button.product-tabs__nav-item.active(type="button" data-product-tab="#product-tab-1")
+                    span Описание
+                button.product-tabs__nav-item(type="button" data-product-tab="#product-tab-2")
+                    span Отзывы
+            .product-tabs__body
+                .product-tabs__item.jsProductTab.active#product-tab-1
+                    .product-tabs__text
+                        p.
+                            Полностью собранное шасси, установленный двигатель Kyosho G20 Stock, 
+                            электронный регулятор скорости PERFEX KA-15, микроприёмник PERFEX KR-6, 
+                            сервомашинку PERFEX KS-101BK, покрашенный корпус с наклейками, 
+                            двухканальный передатчик Perfex/Futaba KT-6, инструкцию, 
+                            трубочку для антенны приёмника, крестовой/колёсный ключ.
+                    h4.product-tabs__title Спецификации:
+                    ul.product-tabs__list
+                        li.product-tabs__list-item Длина: 380 мм.
+                        li.product-tabs__list-item Ширина: 248 мм.
+                        li.product-tabs__list-item Высота: 145 мм.
+                        li.product-tabs__list-item Клиренс: 24 мм
+                        li.product-tabs__list-item Длина колесной базы: 270 мм
+                        li.product-tabs__list-item Колея (передняя/задняя): 176/176 мм.
+                        li.product-tabs__list-item Ширина колёс (перед/зад): 34/42мм.
+                        li.product-tabs__list-item Передаточное число: 8.125:1.
+                        li.product-tabs__list-item Вес (приблизительно): 1650 г.
+                    h4.product-tabs__title Комплект требует:
+                    ul.product-tabs__list
+                        li.product-tabs__list-item Восемь батареек или аккумуляторов типа АА для передатчика
+                        li.product-tabs__list-item Силовой аккумулятор с разъемом Tamiya на 7.2V NI-MH (не менее 1200mAh)
+                        li.product-tabs__list-item Зарядное устройство для силового аккумулятора
+                    .product-tabs__text
+                        p.
+                            Важно: некоторые универсальные зарядные устройства 
+                            "питаются" от 11-18V поэтому для работы от сети (220V) 
+                            потребуется соответствующий адаптер.
+                .product-tabs__item.jsProductTab#product-tab-2
+                    .product-reviews
+                        .product-reviews__item
+                            .product-reviews__header
+                                h4.product-reviews__author Надежда
+                                    span.product-reviews__author-verified Проверенный покупатель
+                                .product-reviews__info
+                                    .product-reviews__rating
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item.product-reviews__rating-item--empty
+                                    time.product-reviews__date(datetime="2011-05-15") 15 мая 2011
+                            .product-reviews__main
+                                p.
+                                    Машина классная. Ооочень быстрая.
+                                    Добротная в состоянии. Катаемся пол дня без остановки. 
+                                    Рекомендую.
+                            .product-reviews__footer
+                                span.product-reviews__pseudolink Ответить
+                                .product-reviews__estimation
+                                    span.product-reviews__estimation-text Это полезный отзыв
+                                    .product-reviews__estimation-group
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--green +
+                                            span.product-reviews__count.product-reviews__count--plus 3
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--red -
+                                            span.product-reviews__count.product-reviews__count--minus 2
+                        .product-reviews__item
+                            .product-reviews__header
+                                h4.product-reviews__author Валентина
+                                    span.product-reviews__author-verified Проверенный покупатель
+                                .product-reviews__info
+                                    .product-reviews__rating
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item.product-reviews__rating-item--empty
+                                    time.product-reviews__date(datetime="2011-04-03") 03 апреля 2011
+                            .product-reviews__main
+                                p.
+                                    Машина классная. Ооочень быстрая.
+                                    Добротная в состоянии. Катаемся пол дня без остановки. 
+                                    Рекомендую.
+                            .product-reviews__footer
+                                span.product-reviews__pseudolink Ответить
+                                .product-reviews__estimation
+                                    span.product-reviews__estimation-text Это полезный отзыв
+                                    .product-reviews__estimation-group
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--green +
+                                            span.product-reviews__count.product-reviews__count--plus 6
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--red -
+                                            span.product-reviews__count.product-reviews__count--minus 2
+                        .product-reviews__item
+                            .product-reviews__header
+                                h4.product-reviews__author Юрий
+                                .product-reviews__info
+                                    .product-reviews__rating
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item
+                                        span.product-reviews__rating-item.product-reviews__rating-item--empty
+                                    time.product-reviews__date(datetime="2011-02-10") 10 февраля 2011
+                            .product-reviews__main
+                                p.
+                                    Машина классная. Ооочень быстрая.
+                                    Добротная в состоянии. Катаемся пол дня без остановки. 
+                                    Рекомендую.
+                            .product-reviews__footer
+                                span.product-reviews__pseudolink Ответить
+                                .product-reviews__estimation
+                                    span.product-reviews__estimation-text Это полезный отзыв
+                                    .product-reviews__estimation-group
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--green +
+                                            span.product-reviews__count.product-reviews__count--plus 7
+                                        .product-reviews__estimation-block
+                                            button.product-reviews__plus-btn.product-reviews__plus-btn--red -
+                                            span.product-reviews__count.product-reviews__count--minus 4
+    section.section.section--products
+        .products
+            h3.products__title.products__title--italic
+                span Подобные товары
+            .products__inner
+                - var productName = 'Anderson X-CRAWLER 1/18'
+                +productMin('product-page.html','1','7 450',productName)
+                
+                - var productName = 'Kyosho Lazer ZX-5 (красный)'
+                +productMin('product-page.html','2','8 220',productName)
+                
+                - var productName = 'Traxxas E-Revo 1/16'
+                +productMin('product-page.html','3','6 750',productName)
+
+                - var productName = 'Kyosho ULTIMA DB'
+                +productMin('product-page.html','4','6 180',productName)
+                        

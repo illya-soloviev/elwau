@@ -1,0 +1,136 @@
+.tabs-reg__nav {
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tabs-reg__nav-item {
+    width: 50%;
+
+    @media (max-width: 565px) {
+        width: 100%;
+    }
+}
+
+.tabs-reg__item {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.tabs-reg__group {
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid $gray-light;
+
+    &:last-child {
+        border: 0;
+    }
+}
+
+.tabs-reg__content {
+    margin-bottom: 30px;
+    text-align: center;
+
+    @media (max-width: 767px) {
+        margin-bottom: 25px;
+    }
+}
+
+.tabs-reg__title {
+    font-size: 1.6rem;
+    color: $black;
+    line-height: 1.2;
+}
+
+.tabs-reg__text {
+    margin-top: 3px;
+
+    font-size: 1.4rem;
+    color: $gray-light;
+    line-height: 1.4;
+}
+
+.tabs-reg__social {
+    display: flex;
+    justify-content: center;
+}
+
+.tabs-reg__social-link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    margin: 0 7px;
+
+    background-color: $white;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+
+    line-height: 50px;
+    text-align: center;
+
+    transition: background-color .3s linear;
+
+    &.facebook {
+        border-color: #3b5999;
+    }
+
+    &.vk {
+        border-color: #4b729f;
+    }
+
+    &.odnoklassniki {
+        border-color: #FF9800;
+    }
+
+    &.google {
+        border-color: #F44336;
+    }
+
+    &.facebook:hover {
+        background-color: #3b5999;
+    }
+
+    &.vk:hover {
+        background-color: #4b729f;
+    }
+
+    &.odnoklassniki:hover {
+        background-color: #FF9800;
+    }
+
+    &.google:hover {
+        background-color: #F44336;
+    }
+}
+
+.tabs-reg__social-link > svg {
+    width: 20px;
+    height: 20px;
+
+    transition: fill .3s linear;
+}
+
+.tabs-reg__social-link.facebook > svg {
+    fill: #3b5999;
+}
+
+.tabs-reg__social-link.vk > svg {
+    fill: #4b729f;
+}
+
+.tabs-reg__social-link.odnoklassniki > svg {
+    fill: #FF9800;
+}
+
+.tabs-reg__social-link.google > svg {
+    fill: #F44336;
+}
+
+.tabs-reg__social-link:hover > svg {
+    fill: $white;
+}

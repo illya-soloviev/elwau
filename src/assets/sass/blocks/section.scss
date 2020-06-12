@@ -1,0 +1,21 @@
+.section {
+    padding-top: 12px;
+    margin-bottom: 23px;
+
+    &--carousel {
+        padding-top: 0;
+        margin-bottom: 52px;
+    }
+
+    &--products {
+        padding: 10px 13px 0;
+        background-color: $white;
+    }
+
+    &--product-desc {
+        padding: 12px 20px 30px;
+
+        background-color: $white;
+        box-shadow: 0 0 5px rgba($black, .42%);
+    }
+}
